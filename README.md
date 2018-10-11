@@ -1,4 +1,4 @@
-# vigrox-discordbot
+# VigroX Discord bot
 Add Simple Essential Commands for your Discord Server with VigroX Discord Bot
 
 --- Changelog
