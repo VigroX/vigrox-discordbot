@@ -3,7 +3,7 @@
         "token": "process.env.BOT_TOKEN"
     },
     "mysql": {
-        "enabled": "process.env.MYSQL",
+        "enabled": true,
 		"settings": {
 			"host": "process.env.MYSQL_HOST",
 			"user": "process.env.MYSQL_USER",
@@ -14,7 +14,7 @@
     "bot": {
         "prefix": "process.env.BOT_PREFIX",
         "activity": "process.env.BOT_ACTIVITY",
-        "debug": "process.env.BOT_DEBUG"
+        "debug": true
     },
     "modules": {
 		"eightball": true,
