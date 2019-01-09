@@ -12,8 +12,8 @@
 		}
 	},
 	"bot": {
-		"prefix": "process.env.BOT_PREFIX",
-		"activity": "process.env.BOT_ACTIVITY",
+		"prefix": "+",
+		"activity": "with Discord",
 		"debug": true
 	},
 	"modules": {
