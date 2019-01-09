@@ -1,8 +1,8 @@
 const YouTube = require("simple-youtube-api");
 const YTDL = require("ytdl-core");
-
+const conf = require("../config.json");
 const queue = new Map();
-const yt = new YouTube(client.cjson.modules.yt.api);
+const yt = new YouTube(conf.modules.yt.api);
 
 exports.run = async (client, message, args) => {
 	if(client.cjson.modules.yt.enabled === false) {

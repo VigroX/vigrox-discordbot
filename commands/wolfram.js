@@ -1,5 +1,6 @@
 const Wolfram = require("node-wolfram");
-const wa = new Wolfram(client.cjson.modules.wolfram.api);
+const conf = require("../config.json");
+const wa = new Wolfram(conf.modules.wolfram.api);
 
 var resultOpts = ["Result", "Exact result", "Decimal approximation"];
 
