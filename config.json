@@ -14,7 +14,7 @@
     "bot": {
         "prefix": "process.env.BOT_PREFIX",
         "activity": "process.env.BOT_ACTIVITY",
-        "debug": false
+        "debug": "process.env.BOT_DEBUG"
     },
     "modules": {
 		"eightball": true,
