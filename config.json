@@ -1,27 +1,27 @@
 {
-    "login": {
-        "token": "process.env.BOT_TOKEN"
-    },
-    "mysql": {
-        "enabled": true,
+	"login": {
+		"token": "process.env.BOT_TOKEN"
+	},
+	"mysql": {
+		"enabled": true,
 		"settings": {
 			"host": "process.env.MYSQL_HOST",
 			"user": "process.env.MYSQL_USER",
 			"pass": "process.env.MYSQL_PASS",
 			"database": "process.env.MYSQL_DATABASE"
 		}
-    },
-    "bot": {
-        "prefix": "process.env.BOT_PREFIX",
-        "activity": "process.env.BOT_ACTIVITY",
-        "debug": true
-    },
-    "modules": {
+	},
+	"bot": {
+		"prefix": "process.env.BOT_PREFIX",
+		"activity": "process.env.BOT_ACTIVITY",
+		"debug": true
+	},
+	"modules": {
 		"eightball": true,
-        "botinfo": true,
-        "cat": true,
-        "coinflip": true,
-        "dice": true,
+		"botinfo": true,
+		"cat": true,
+		"coinflip": true,
+		"dice": true,
 		"dog": true,
 		"help": true,
 		"mysql": false,
@@ -38,21 +38,21 @@
 			"enabled": true,
 			"api": "process.env.YT_API"
 		}
-    },
-    "messages": {
-        "syntax": {
-            "prefix": {
-                "debug": "DEBUG>",
-                "cmd": "[CMD]",
-                "db": "[DB]",
-                "bot": "[BOT]"
-            },
-            "type": {
-                "ok": "[OK]",
-                "load": "[LOAD]",
-                "error": "[ERROR]",
-                "warn": "[WARN]"
-            }
-        }
-    }
+	},
+	"messages": {
+		"syntax": {
+			"prefix": {
+				"debug": "DEBUG>",
+				"cmd": "[CMD]",
+				"db": "[DB]",
+				"bot": "[BOT]"
+			},
+			"type": {
+				"ok": "[OK]",
+				"load": "[LOAD]",
+				"error": "[ERROR]",
+				"warn": "[WARN]"
+			}
+		}
+	}
 }
