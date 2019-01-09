@@ -1,0 +1,35 @@
+{
+    "login": {
+        "token": "process.env.BOT_TOKEN"
+    },
+    "mysql": {
+        "enabled": true
+    },
+    "bot": {
+        "prefix": "+",
+        "activity": "with Discord",
+        "debug": false
+    },
+    "modules": {
+        "help": true,
+        "ping": true,
+        "cat": true,
+        "dog": true
+    },
+    "messages": {
+        "syntax": {
+            "prefix": {
+                "debug": "DEBUG>",
+                "cmd": "[CMD]",
+                "db": "[DB]",
+                "bot": "[BOT]"
+            },
+            "type": {
+                "ok": "[OK]",
+                "load": "[LOAD]",
+                "error": "[ERROR]",
+                "warn": "[WARN]"
+            }
+        }
+    }
+}
