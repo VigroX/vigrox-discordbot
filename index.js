@@ -401,7 +401,7 @@ function startBot() {
 		if(debug_status === true) {
 			client.log(client.debug_prefix + "DIR: Events" + client.msg_success)
 		}
-		client.login(client.cjson.login.token);
+		client.login(process.env.BOT_TOKEN);
 	});
 }
 
