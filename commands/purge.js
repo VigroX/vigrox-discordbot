@@ -1,4 +1,7 @@
 exports.run = async (client, message, args) => {
+	if(client.cjson.modules.purge === false) {
+		return message.reply(":no_entry_sign: This module is disabled!");
+	}
 	if(!message.member.hasPermission("MANAGE_MESSAGES")) {
 		return message.reply("You do not have permission!");
 	}

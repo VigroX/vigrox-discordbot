@@ -1,9 +1,12 @@
 const Wolfram = require("node-wolfram");
-const wa = new Wolfram(process.env.WA_API);
+const wa = new Wolfram(client.cjson.modules.wolfram.api);
 
 var resultOpts = ["Result", "Exact result", "Decimal approximation"];
 
 exports.run = async (client, message, args) => {
+	if(client.cjson.modules.wolfram.enabled === false) {
+		return message.reply(":no_entry_sign: This module is disabled!");
+	}
     if(!args[0]) {
         return message.reply("Wrong usage! Example: (+wolfram 1+1)");
     }

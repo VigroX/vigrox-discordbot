@@ -1,4 +1,7 @@
 exports.run = async (client, message, args) => {
+	if(client.cjson.modules.serverinfo === false) {
+		return message.reply(":no_entry_sign: This module is disabled!");
+	}
 	if(!message.member.hasPermission("BAN_MEMBERS")) {
 		return message.reply(":no_entry_sign: You do not have permission!");
 	}

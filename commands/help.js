@@ -1,4 +1,7 @@
 exports.run = async (client, message, args) => {
+	if(client.cjson.modules.help === false) {
+		return message.reply(":no_entry_sign: This module is disabled!");
+	}
     if(args[0]) {
         let command = args[0];
         if(client.commands.has(command) || client.aliases.get(command)) {

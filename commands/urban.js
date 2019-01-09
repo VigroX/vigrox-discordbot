@@ -1,6 +1,9 @@
 const urban = require("urban");
 
 exports.run = async (client, message, args) => {
+	if(client.cjson.modules.urban === false) {
+		return message.reply(":no_entry_sign: This module is disabled!");
+	}
 	const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
 	if(!args[0]) return message.channel.send(":question: Invalid usage. (urban <word>)");
 	let search = urban(args.join(" "));

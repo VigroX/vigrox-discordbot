@@ -1,4 +1,7 @@
 exports.run = async (bot, message, args) => {
+	if(client.cjson.modules.coinflip === false) {
+		return message.reply(":no_entry_sign: This module is disabled!");
+	}
     let result = Math.floor((Math.random() * 2) + 1);
     if (result == 1) {
         message.reply("The coin landed on *heads*!");

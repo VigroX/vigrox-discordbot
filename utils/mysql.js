@@ -6,10 +6,10 @@ const debug_prefix = "\x1b[47m\x1b[30m" + cjson.messages.syntax.prefix.debug + "
 const log = message => { console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`); }
 
 const pool = mysql.createPool({
-	host: process.env.MYSQL_HOST,
-	user: process.env.MYSQL_USER,
-	password: process.env.MYSQL_PASS,
-	database: process.env.MYSQL_DATABASE,
+	host: cjson.mysql.settings.host,
+	user: cjson.mysql.settings.user,
+	password: cjson.mysql.settings.pass,
+	database: cjson.mysql.settings.database,
 	connectionLimit: 10
 });
 

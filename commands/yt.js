@@ -2,9 +2,12 @@ const YouTube = require("simple-youtube-api");
 const YTDL = require("ytdl-core");
 
 const queue = new Map();
-const yt = new YouTube(process.env.YT_API);
+const yt = new YouTube(client.cjson.modules.yt.api);
 
 exports.run = async (client, message, args) => {
+	if(client.cjson.modules.yt.enabled === false) {
+		return message.reply(":no_entry_sign: This module is disabled!");
+	}
 	const arg = message.content.split(" ");
 	const searchString = arg.slice(2).join(" ");
 	const url = args[1] ? args[1].replace(/<(.+)>/g, "$1") : '';

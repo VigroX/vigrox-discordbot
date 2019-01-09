@@ -1,4 +1,7 @@
 exports.run = async (client, message, args) => {
+	if(client.cjson.modules.userinfo === false) {
+		return message.reply(":no_entry_sign: This module is disabled!");
+	}
 	let embed = new client.discord.RichEmbed()
 	.setColor("GREEN")
 	.setAuthor(message.author.tag, message.author.displayAvatarURL)

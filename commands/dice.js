@@ -1,6 +1,9 @@
 const d20 = require("d20");
 
 exports.run = async (client, message, args) => {
+	if(client.cjson.modules.dice === false) {
+		return message.reply(":no_entry_sign: This module is disabled!");
+	}
 	if(!args[0]) {
 		return message.channel.send(`:question: Invalid usage: (example: ${client.config.prefix}dice d20)`);
 	}
