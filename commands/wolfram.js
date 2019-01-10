@@ -1,5 +1,5 @@
 const Wolfram = require("node-wolfram");
-const wa = new Wolfram(process.env.WA_API);
+const wa = new Wolfram(process.env.WOLFRAM_API_KEY);
 
 var resultOpts = ["Result", "Exact result", "Decimal approximation"];
 

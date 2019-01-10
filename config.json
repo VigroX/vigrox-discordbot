@@ -1,19 +1,8 @@
 {
-	"login": {
-		"token": "process.env.BOT_TOKEN"
-	},
-	"mysql": {
-		"enabled": true,
-		"settings": {
-			"host": "process.env.MYSQL_HOST",
-			"user": "process.env.MYSQL_USER",
-			"pass": "process.env.MYSQL_PASS",
-			"database": "process.env.MYSQL_DATABASE"
-		}
-	},
 	"bot": {
-		"prefix": "+",
+		"prefix": "-",
 		"activity": "with Discord",
+		"mysql": true,
 		"debug": true
 	},
 	"modules": {
@@ -21,6 +10,7 @@
 		"botinfo": true,
 		"cat": true,
 		"coinflip": true,
+		"decide": true,
 		"dice": true,
 		"dog": true,
 		"help": true,
@@ -30,14 +20,8 @@
 		"purge": true,
 		"serverinfo": true,
 		"urban": true,
-		"wolfram": {
-			"enabled": true,
-			"api": "process.env.WA_API"
-		},
-		"yt": {
-			"enabled": true,
-			"api": "process.env.YT_API"
-		}
+		"wolfram": true,
+		"yt": true
 	},
 	"messages": {
 		"syntax": {
