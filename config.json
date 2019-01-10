@@ -3,7 +3,7 @@
 		"prefix": "-",
 		"activity": "with Discord",
 		"mysql": true,
-		"debug": true
+		"debug": false
 	},
 	"modules": {
 		"eightball": true,

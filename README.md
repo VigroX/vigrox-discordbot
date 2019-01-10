@@ -12,7 +12,7 @@ A: There is no public bot avaliable, this is only the source code for the Discor
 - cat (Random cat picture from internet)
 - coinflip (Flip coin on heads or tails)
 - decide (Let the bot decide your decision)
-- dice (d20)
+- dice (Roll a dice)
 - dog (Random dog picture from internet)
 - help (Get information about the command)
 - mysql (Debug sql database)
