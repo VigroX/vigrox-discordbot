@@ -3,7 +3,8 @@ exports.run = async (client, message, args) => {
 		return message.reply(":no_entry_sign: This module is disabled!");
 	}
 	if(!args[1]) return message.reply("There must be atleast two words to decide from!");
-	let wordArray = args.split(" ");
+	let words = 'YES NO TEST FAIL ERROR OK',
+		wordArray = words.split(" ");
 	let result = wordArray[Math.floor(Math.random() * wordArray.length)];
 	let arguments = args.join(", ");
 	let embed = new client.discord.RichEmbed()
@@ -17,7 +18,7 @@ exports.run = async (client, message, args) => {
 exports.config = {
 	name: "decide",
 	aliases: ["de", "choose", "or"],
-	usage: "decide <word> <word>",
+	usage: "decide <word> <word> [word]...",
 	description: "Let the bot decide your decision.",
 	accessableby: "Members"
 };
