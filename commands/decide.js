@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
 	}
 	if(!args[1]) return message.reply("There must be atleast two words to decide from!");
 	let arguments = args.join(", ");
-	let wordArray = arguments.split(" ");
+	let wordArray = args.join.split(" ");
 	let result = wordArray[Math.floor(Math.random() * wordArray.length)];
 	let embed = new client.discord.RichEmbed()
 	.setAuthor(message.author.tag)
