@@ -3,9 +3,9 @@ exports.run = async (client, message, args) => {
 		return message.reply(":no_entry_sign: This module is disabled!");
 	}
 	if(!args[1]) return message.reply("There must be atleast two words to decide from!");
+	let arguments = args.join(", ");
 	let wordArray = arguments.split(" ");
 	let result = wordArray[Math.floor(Math.random() * wordArray.length)];
-	let arguments = args.join(", ");
 	let embed = new client.discord.RichEmbed()
 	.setAuthor(message.author.tag)
 	.setColor("BLUE")
