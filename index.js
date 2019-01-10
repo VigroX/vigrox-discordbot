@@ -65,15 +65,17 @@ let modules_values = [
 	['serverinfo', client.cjson.modules.serverinfo],
 	['urban', client.cjson.modules.urban],
 	['userinfo', client.cjson.modules.userinfo],
-	['wolfram', client.cjson.modules.wolfram.enabled],
-	['yt', client.cjson.modules.yt.enabled]
+	['wolfram', client.cjson.modules.wolfram],
+	['yt', client.cjson.modules.yt]
 ];
 
-let mysql_status = client.cjson.mysql.enabled;
+let mysql_status = client.cjson.bot.mysql;
 let debug_status = client.cjson.bot.debug;
 
 let dirCommandsLoaded;
 let dirEventsLoaded;
+
+const load = async () => {
 
 // START
 function mainStart() {
@@ -374,6 +376,7 @@ function resetMySQL(table) {
 		});
 	});
 }
+
 client.setProperty = function setProperty(table, name, value, callback) {
 	execute(`UPDATE ${table} SET value = ? WHERE name = ?`, [value, name], () => {
 		writeMySQL(table, () => {
@@ -401,8 +404,12 @@ function startBot() {
 		if(debug_status === true) {
 			client.log(client.debug_prefix + "DIR: Events" + client.msg_success)
 		}
-		client.login(client.cjson.login.token);
+		client.login(process.env.BOT_TOKEN);
 	});
 }
 
 mainStart();
+
+};
+
+load();

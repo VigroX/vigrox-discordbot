@@ -1,4 +1,4 @@
-exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args) => {
 	if(client.cjson.modules.coinflip === false) {
 		return message.reply(":no_entry_sign: This module is disabled!");
 	}

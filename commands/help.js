@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
 
 exports.config = {
     name: "help",
-    aliases: ["h", "commands"],
+    aliases: ["h", "commands", "cmds"],
     usage: "help",
     description: "Get a list of all the avaliable bot commands!",
     accessableby: "Members"
