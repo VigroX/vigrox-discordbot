@@ -2,7 +2,8 @@
 Add Essential Commands for your Discord Server with VigroX Discord Bot.
 
 # FAQ
-Q: How can i invite this bot to my discord server? 
+Q: How can i invite this bot to my discord server?
+
 A: There is no public bot avaliable, this is only the source code for the Discord Bot that you must build and customize yourself.
 
 # Commands
