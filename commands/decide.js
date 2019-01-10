@@ -3,8 +3,7 @@ exports.run = async (client, message, args) => {
 		return message.reply(":no_entry_sign: This module is disabled!");
 	}
 	if(!args[1]) return message.reply("There must be atleast two words to decide from!");
-	let words = 'YES NO TEST FAIL ERROR OK',
-		wordArray = words.split(" ");
+	let wordArray = message.content.split(" ");
 	let result = wordArray[Math.floor(Math.random() * wordArray.length)];
 	let arguments = args.join(", ");
 	let embed = new client.discord.RichEmbed()
