@@ -75,6 +75,8 @@ let debug_status = client.cjson.bot.debug;
 let dirCommandsLoaded;
 let dirEventsLoaded;
 
+const load = async () => {
+
 // START
 function mainStart() {
 	main((mysql_result, start) => {
@@ -407,3 +409,7 @@ function startBot() {
 }
 
 mainStart();
+
+};
+
+load();
