@@ -257,7 +257,7 @@ exports.run = async (client, message, args) => {
 		case "playlist":
 		if(!message.member.voiceChannel) return message.channel.send("You are not in a voice channel!");
 		message.channel.send(":arrows_counterclockwise: Adding playlist songs...");
-		let pl = await yt.getPlaylist("https://www.youtube.com/playlist?list=" + process.env.YT_PL);
+		let pl = await yt.getPlaylist("https://www.youtube.com/playlist?list=" + process.env.YOUTUBE_PLAYLIST);
 		let plvideos = await pl.getVideos();
 		for (const video of Object.values(plvideos)) {
 			let video3 = await yt.getVideoByID(video.id);

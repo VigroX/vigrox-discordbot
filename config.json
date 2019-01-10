@@ -16,7 +16,7 @@
 		"help": true,
 		"mysql": false,
 		"ping": true,
-		"playlist": true,
+		"playlist": false,
 		"purge": true,
 		"serverinfo": true,
 		"urban": true,
