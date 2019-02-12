@@ -1,9 +1,8 @@
 const sa = require("superagent");
 
 exports.run = async (client, message, args) => {
-	if(client.cjson.modules.cat === false) {
+	if(!client.cjson.modules.cat)
 		return message.reply(":no_entry_sign: This module is disabled!");
-	}
 	let {body} = await sa.get('https://aws.random.cat/meow');
 	let embed = new client.discord.RichEmbed()
 	.setColor("BLUE")

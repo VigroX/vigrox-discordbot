@@ -15,42 +15,35 @@ const pool = mysql.createPool({
 
 pool.on("connection", function handleNewConnection(con) {
 	let debug_status = cjson.bot.debug;
-	if(debug_status === true) {
+	if(debug_status) 
 		log(debug_prefix + "DB: Connection established");
-	}
 	try {
 		con.on("error", function(err) {
 			if(err.code === "PROTOCOL_CONNECTION_LOST") {
-				if(debug_status === true) {
+				if(debug_status)
 					console.error('DB: Database connection was closed.');
-				}
 				setTimeout(handleNewConnection, 2000);
 			} else if(err.code === 'ER_CON_COUNT_ERROR') {
-				if(debug_status === true) {
+				if(debug_status)
 					console.error('Database has too many connections.');
-				}
 				setTimeout(handleNewConnection, 2000);
-			} else if (err.code === 'ECONNREFUSED') {
-				if(debug_status === true) {
+			} else if(err.code === 'ECONNREFUSED') {
+				if(debug_status)
 					console.error('Database connection was refused.');
-				}
 				setTimeout(handleNewConnection, 2000);
 			} else {
 				console.error(new Date(), "MySQL error", err.code);
 			}
 		});
 		con.on("close", function(err) {
-			if(err) {
-				log("Connection closed failed.");
-			} else {
-				if(debug_status === true) {
-					log(debug_prefix + "Connection closed normally.");
-				}
-			}
-			console.error(new Date(), "MySQL close", err);
+			if(err)
+				return log("Connection closed failed.");
+			if(debug_status)
+				log(debug_prefix + "Connection closed normally.");
+			return console.error(new Date(), "MySQL close", err);
 		});
 	} catch(err) {
-		console.error(new Date(), "MySQL extreme error", err.code);
+		return console.error(new Date(), "MySQL extreme error", err.code);
 	}
 });
 

@@ -1,13 +1,10 @@
 exports.run = async (client, message, args) => {
-	if(client.cjson.modules.mysql === false) {
+	if(!client.cjson.modules.mysql)
 		return message.reply(":no_entry_sign: This module is disabled!");
-	}
-	if(!message.member.hasPermission("BAN_MEMBERS")) {
+	if(!message.member.hasPermission("BAN_MEMBERS"))
 		return message.reply(":no_entry_sign: You do not have permission!");
-	}
-	if(client.cjson.bot.mysql !== true) {
+	if(!client.cjson.bot.mysql)
 		return message.reply(":no_entry_sign: This module is configured incorrectly!");
-	}
 	client.setProperty("config", "version", client.package.version, () => {
 		message.reply("Updated Version to " + client.package.version);
 	});

@@ -1,21 +1,21 @@
 exports.run = async (client, message, args) => {
-	if(client.cjson.modules.serverinfo === false) {
+	if(!client.cjson.modules.serverinfo)
 		return message.reply(":no_entry_sign: This module is disabled!");
-	}
-	if(!message.member.hasPermission("BAN_MEMBERS")) {
+	if(!message.member.hasPermission("BAN_MEMBERS"))
 		return message.reply(":no_entry_sign: You do not have permission!");
-	}
 	function checkBots(guild) {
 		let botCount = 0;
 		guild.members.forEach(member => {
-			if(member.user.bot) botCount++;
+			if(member.user.bot)
+				botCount++;
 		});
 		return botCount;
 	}
 	function checkMembers(guild) {
 		let memberCount = 0;
 		guild.members.forEach(member => {
-			if(!member.user.bot) memberCount++;
+			if(!member.user.bot)
+				memberCount++;
 		});
 		return memberCount;
 	}

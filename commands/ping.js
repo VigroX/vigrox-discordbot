@@ -1,8 +1,7 @@
 exports.run = async (client, message, args) => {
-	if(client.cjson.modules.ping === false) {
+	if(!client.cjson.modules.ping)
 		return message.reply(":no_entry_sign: This module is disabled!");
-	}
-	message.reply(`Pong! ${Math.round(client.ping)}ms`);
+	return message.reply(`Pong! ${Math.round(client.ping)}ms`);
 };
 
 exports.config = {

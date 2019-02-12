@@ -1,9 +1,8 @@
 const sa = require("superagent");
 
 exports.run = async (client, message, args) => {
-	if(client.cjson.modules.dog === false) {
+	if(!client.cjson.modules.dog)
 		return message.reply(":no_entry_sign: This module is disabled!");
-	}
 	let {body} = await sa.get('https://random.dog/woof.json');
 	checkUrl(body.url.slice(-3).toLowerCase());
 	function checkUrl(url) {

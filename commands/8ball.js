@@ -1,7 +1,6 @@
 exports.run = async (client, message, args) => {
-	if(client.cjson.modules.eightball === false) {
+	if(!client.cjson.modules.eightball)
 		return message.reply(":no_entry_sign: This module is disabled!");
-	}
 	if(!args[1]) return message.reply("Please ask a full question!");
 	let replies = [
 		"Yes.",
@@ -22,7 +21,7 @@ exports.run = async (client, message, args) => {
 	.setColor("BLUE")
 	.addField("Question", question)
 	.addField("Answer", replies[result]);
-	message.channel.send(embed);
+	return message.channel.send(embed);
 };
 
 exports.config = {
