@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
 	if(!client.cjson.bot.mysql)
 		return message.reply(":no_entry_sign: This module is configured incorrectly!");
 	client.setProperty("config", "version", client.package.version, () => {
-		message.reply("Updated Version to " + client.package.version);
+		return message.reply("Updated Version to " + client.package.version);
 	});
 };
 

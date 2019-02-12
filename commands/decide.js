@@ -1,7 +1,8 @@
 exports.run = async (client, message, args) => {
 	if(!client.cjson.modules.decide)
 		return message.reply(":no_entry_sign: This module is disabled!");
-	if(!args[1]) return message.reply("There must be atleast two words to decide from!");
+	if(!args[1])
+		return message.reply("There must be atleast two words to decide from!");
 	let options = args.join(", ");
 	let wordArray = args.join(" ").split(" ");
 	let result = wordArray[Math.floor(Math.random() * wordArray.length)];
@@ -10,7 +11,7 @@ exports.run = async (client, message, args) => {
 	.setColor("BLUE")
 	.addField("Decided from:", options)
 	.addField("Result", result);
-	message.channel.send(embed);
+	return message.channel.send(embed);
 };
 
 exports.config = {

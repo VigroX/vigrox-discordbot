@@ -210,7 +210,7 @@ exports.run = async (client, message, args) => {
 				.setTimestamp()
 				.setFooter(`${client.user.username}`, `${client.user.avatarURL}`);
 			}
-			message.channel.send({ embed: embed });
+			return message.channel.send({ embed: embed });
 			break;
 		case "pause":
 			if(!message.member.voiceChannel) return message.channel.send("You are not in a voice channel!");
@@ -219,7 +219,7 @@ exports.run = async (client, message, args) => {
 				serverQueue.connection.dispatcher.pause();
 				return message.channel.send(":pause_button: Paused the music!");
 			}
-			message.channel.send(":x: There is nothing playing.");
+			return message.channel.send(":x: There is nothing playing.");
 			break;
 		case "resume":
 			if(!message.member.voiceChannel) return message.channel.send("You are not in a voice channel!");
@@ -228,7 +228,7 @@ exports.run = async (client, message, args) => {
 				serverQueue.connection.dispatcher.resume();
 				return message.channel.send(":arrow_forward: Resumed the music!");
 			}
-			message.channel.send(":x: There is nothing playing.");
+			return message.channel.send(":x: There is nothing playing.");
 			break;
 		case "shuffle":
 			if(!message.member.voiceChannel) return message.channel.send("You are not in a voice channel!");
@@ -250,17 +250,17 @@ exports.run = async (client, message, args) => {
 			shuffle(songs);
 			songs.splice(0, 0, current);
 			serverQueue.songs = songs;
-			message.channel.send(":repeat: **Shuffled** the queue.");
+			return message.channel.send(":repeat: **Shuffled** the queue.");
 			break;
 		case "loop":
 			if(!message.member.voiceChannel) return message.channel.send("You are not in a voice channel!");
 			if(!serverQueue) return message.channel.send("There is nothing playing to loop!");
 			if(!serverQueue.loop) {
 				serverQueue.loop = true;
-				message.channel.send(`:repeat: **Queue** will now be looped.`);
+				return message.channel.send(`:repeat: **Queue** will now be looped.`);
 			} else {
 				serverQueue.loop = false;
-				message.channel.send(`:repeat: **Queue** will no longer be looped.`);
+				return message.channel.send(`:repeat: **Queue** will no longer be looped.`);
 			}
 			break;
 		case "playlist":
@@ -278,10 +278,10 @@ exports.run = async (client, message, args) => {
 				let video3 = await yt.getVideoByID(video.id);
 				await handleVideo(client, video3, message, message.member.voiceChannel, true);
 			}
-			message.channel.send(`:white_check_mark: Playlist: **${pl.title}** has been added to the queue! (+${plvideos.length})`);
+			return message.channel.send(`:white_check_mark: Playlist: **${pl.title}** has been added to the queue! (+${plvideos.length})`);
 			break;
 		default:
-			message.channel.send(":question: Invalid usage. (play, skip, stop, np, playlist, info, loop, pause, resume, queue, volume)");
+			return message.channel.send(":question: Invalid usage. (play, skip, stop, np, playlist, info, loop, pause, resume, queue, volume)");
 	}
 };
 
