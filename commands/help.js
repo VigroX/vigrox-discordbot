@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
 			.setDescription(`The bot prefix is: ${client.config.prefix}\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n**Accessable by:** ${command.config.accessableby || "Default"}\n**Aliases:** ${command.config.aliases || "No Aliases"}`)
 			.setFooter(client.user.username, client.user.displayAvatarURL)
 			.setTimestamp();
-			message.channel.send(embed);
+			return message.channel.send(embed);
 		}
 	}
 	if(!args[0]) {
@@ -30,6 +30,7 @@ exports.run = async (client, message, args) => {
 		.setTimestamp();
 		message.channel.send(embed).then(m => m.delete(10000));
 		message.author.send(Sembed).then(m => m.delete(60000));
+		return;
 	}
 };
 
